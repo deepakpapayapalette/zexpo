@@ -1,0 +1,101 @@
+.domain-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.domain-card img {
+  transition: transform 0.3s ease;
+}
+
+.domain-card:hover img {
+  transform: scale(1.05);
+}
+
+.domain-card {
+  background: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 6px solid var(--web-secondary);
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.founder-card .founder-image {
+  transition: ease-in-out 0.4s;
+}
+
+.founder-card:hover .founder-image {
+  transform: scale(1.07);
+}
+
+@media screen and (min-width: 1024px) {
+  .container .react-multiple-carousel__arrow--left {
+    left: 45%;
+    bottom: 40px;
+  }
+
+  .container .react-multiple-carousel__arrow--right {
+    bottom: 40px;
+    right: 45%;
+  }
+}
+
+
+.custom-carousel-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.custom-carousel-buttons button {
+  background: #fff;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-carousel-buttons button:hover {
+  background: #1268b3;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .custom-carousel-buttons {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+.inner-content {}
+
+.read-more-icon {
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover .read-more-icon {
+  transform: translateX(6px);
+
+}
