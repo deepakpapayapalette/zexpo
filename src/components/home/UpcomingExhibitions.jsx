@@ -84,7 +84,7 @@ const UpcomingExhibitions = () => (
   <section className="space-top">
     <div className="container">
       <div className="flex flex-col md:flex-row justify-between items-end md:items-center mb-8">
-        <h3 className="text-4xl md:text-5xl font-semibold text-black leading-tight">
+        <h3 className="md:text-5xl text-3xl font-semibold text-black leading-tight">
           Our Upcoming <span className="text-webprimary font-sourcePro">Exhibitions</span>
         </h3>
         <button className="flex items-center gap-2 text-black font-semibold text-lg mt-4 md:mt-0">

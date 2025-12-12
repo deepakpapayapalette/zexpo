@@ -27,12 +27,10 @@ export default function OurProcess() {
   return (
     <div className="space-top bg-[#edf4f9] " >
       <div className="container py-10 md:py-12 relative">
-        <h2 className="text-5xl mb-8 font-semibold text-black">
+        <h2 className="md:text-5xl text-3xl mb-8 font-semibold text-black">
           How  <span className="text-webprimary font-sourcePro">ZEXPO</span> Works?
         </h2>
-        <p className="text-gray-700 text-base md:text-lg mb-10">
-          A proven methodology for delivering successful healthcare technology solutions.
-        </p>
+
         {/* Stepper */}
         <div className="relative grid lg:grid-cols-4 md:grid-cols-2 gap-4 ">
           {steps.map((step, idx) => (
@@ -47,7 +45,6 @@ export default function OurProcess() {
               </div>
               <div className="text-webprimary text-center text-base md:text-lg font-bold leading-tight mb-1">{step.title}</div>
               <div className="text-gray-700 text-sm md:text-base text-center">{step.desc}</div>
-
             </div>
           ))}
           {/* Dotted lines (responsive via abs/width calc) */}

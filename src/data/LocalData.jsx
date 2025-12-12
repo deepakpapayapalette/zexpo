@@ -1,310 +1,129 @@
-import newsImg from '../assets/images/home/news-article.png'
-import news1 from '../assets/images/home/news-article.png'
-import news2 from '../assets/images/home/news-article.png'
-import news3 from '../assets/images/home/news-article.png'
-import news4 from '../assets/images/home/news-article.png'
-
 import medicalTourism from '../assets/images/home/news-article.png'
 import roadSafety from '../assets/images/home/news-article.png'
 import publicHealth from '../assets/images/home/news-article.png'
 import innovations from '../assets/images/home/news-article.png'
 import skillDevelopment from '../assets/images/home/news-article.png'
 import tourism from '../assets/images/home/news-article.png'
+import newsImg from '../assets/images/news/new1.png'
+import team1 from "../assets/images/home/team1.png"; // Placeholder
+import team2 from "../assets/images/home/team2.png"; // Placeholder
+import team3 from "../assets/images/home/team1.png"; // Placeholder
 
-export const articlesData = [
+
+export const newsData = [
   {
     id: 1,
-    readTime: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
-    title: "Title",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    // paraContent: [
-    //   {
-    //     id: 1,
-    //     paraTitle: "A Smarter Way to Drive Safe",
-    //     para: "ATRN Solutions LLP (“AETURN”), under the Startup India scheme and ZENIVERSE Ventures, has officially launched its groundbreaking Zen Drive Safe App — a next-generation road safety solution designed to reduce accidents and promote safer driving habits.",
-    //   },
-    //   {
-    //     id: 2,
-    //     paraTitle: "About Zen Drive Safe",
-    //     para: "Zen Drive Safe is a web and mobile application powered with AI and advanced analytics. The solution integrates seamlessly with vehicles and driver systems to provide:",
-    //   },
-    // ],
-    // paraListing: [
-    //   {
-    //     id: 1,
-    //     paraTitle: "Driver Fitness Tracking",
-    //     para: " – Monitors driver alertness, fatigue, and health.",
-    //   },
-    //   {
-    //     id: 2,
-    //     paraTitle: "Vehicle Fitness Tracking",
-    //     para: " – Ensures timely maintenance, inspections, and compliance.",
-    //   },
-    //   {
-    //     id: 3,
-    //     paraTitle: "Driving Behaviour Analysis",
-    //     para: " – – Uses dashcam and sensors to monitor over speeding, harsh braking, cornering, and distractions.",
-
-    //   }
-
-    // ],
-
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
     img: newsImg,
+
   },
   {
     id: 2,
-    readTime: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
-    title: "title",
-    description: "content",
-    paraContent: [
-      {
-        id: 1,
-        paraTitle: "A Smarter Way to Drive Safe",
-        para: "ATRN Solutions LLP (“AETURN”), under the Startup India scheme and ZENIVERSE Ventures, has officially launched its groundbreaking Zen Drive Safe App — a next-generation road safety solution designed to reduce accidents and promote safer driving habits.",
-      },
-      {
-        id: 2,
-        paraTitle: "About Zen Drive Safe",
-        para: "Zen Drive Safe is a web and mobile application powered with AI and advanced analytics. The solution integrates seamlessly with vehicles and driver systems to provide:",
-      },
-    ],
-    paraListing: [
-      {
-        id: 1,
-        paraTitle: "Driver Fitness Tracking",
-        para: " – Monitors driver alertness, fatigue, and health.",
-      },
-      {
-        id: 2,
-        paraTitle: "Vehicle Fitness Tracking",
-        para: " – Ensures timely maintenance, inspections, and compliance.",
-      },
-      {
-        id: 3,
-        paraTitle: "Driving Behaviour Analysis",
-        para: " – – Uses dashcam and sensors to monitor over speeding, harsh braking, cornering, and distractions.",
-
-      }
-
-    ],
-
-
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
     img: newsImg,
   },
   {
     id: 3,
-    readTime: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    paraContent: [
-      {
-        id: 1,
-        paraTitle: "A Smarter Way to Drive Safe",
-        para: "ATRN Solutions LLP (“AETURN”), under the Startup India scheme and ZENIVERSE Ventures, has officially launched its groundbreaking Zen Drive Safe App — a next-generation road safety solution designed to reduce accidents and promote safer driving habits.",
-      },
-      {
-        id: 2,
-        paraTitle: "About Zen Drive Safe",
-        para: "Zen Drive Safe is a web and mobile application powered with AI and advanced analytics. The solution integrates seamlessly with vehicles and driver systems to provide:",
-      },
-    ],
-    paraListing: [
-      {
-        id: 1,
-        paraTitle: "Driver Fitness Tracking",
-        para: " – Monitors driver alertness, fatigue, and health.",
-      },
-      {
-        id: 2,
-        paraTitle: "Vehicle Fitness Tracking",
-        para: " – Ensures timely maintenance, inspections, and compliance.",
-      },
-      {
-        id: 3,
-        paraTitle: "Driving Behaviour Analysis",
-        para: " – – Uses dashcam and sensors to monitor over speeding, harsh braking, cornering, and distractions.",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description2: "The seven-day festival will take place across multiple iconic venues, including the Sawai Mansingh Stadium, Central Arena, and Zexpo Pavilion.  Visitors can expect to witness an exciting lineup of games — from cricket and football to badminton, cycling, and even traditional Indian sports that bring the city’s culture alive. Each day will conclude with live concerts, art showcases, and food festivals, ensuring that the event isn’t just about competition — it’s about community.",
 
-      }
-
-    ],
+    title2: 'A Week of Action and Celebration',
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
     img: newsImg,
   },
   {
     id: 4,
-    readTime: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    paraContent: [
-      {
-        id: 1,
-        paraTitle: "A Smarter Way to Drive Safe",
-        para: "ATRN Solutions LLP (“AETURN”), under the Startup India scheme and ZENIVERSE Ventures, has officially launched its groundbreaking Zen Drive Safe App — a next-generation road safety solution designed to reduce accidents and promote safer driving habits.",
-      },
-      {
-        id: 2,
-        paraTitle: "About Zen Drive Safe",
-        para: "Zen Drive Safe is a web and mobile application powered with AI and advanced analytics. The solution integrates seamlessly with vehicles and driver systems to provide:",
-      },
-    ],
-    paraListing: [
-      {
-        id: 1,
-        paraTitle: "Driver Fitness Tracking",
-        para: " – Monitors driver alertness, fatigue, and health.",
-      },
-      {
-        id: 2,
-        paraTitle: "Vehicle Fitness Tracking",
-        para: " – Ensures timely maintenance, inspections, and compliance.",
-      },
-      {
-        id: 3,
-        paraTitle: "Driving Behaviour Analysis",
-        para: " – – Uses dashcam and sensors to monitor over speeding, harsh braking, cornering, and distractions.",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description2: "The seven-day festival will take place across multiple iconic venues, including the Sawai Mansingh Stadium, Central Arena, and Zexpo Pavilion.  Visitors can expect to witness an exciting lineup of games — from cricket and football to badminton, cycling, and even traditional Indian sports that bring the city’s culture alive. Each day will conclude with live concerts, art showcases, and food festivals, ensuring that the event isn’t just about competition — it’s about community.",
 
-      }
-
-    ],
+    title2: 'A Week of Action and Celebration',
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
     img: newsImg,
   },
   {
     id: 5,
-    readTime: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    paraContent: [
-      {
-        id: 1,
-        paraTitle: "A Smarter Way to Drive Safe",
-        para: "ATRN Solutions LLP (“AETURN”), under the Startup India scheme and ZENIVERSE Ventures, has officially launched its groundbreaking Zen Drive Safe App — a next-generation road safety solution designed to reduce accidents and promote safer driving habits.",
-      },
-      {
-        id: 2,
-        paraTitle: "About Zen Drive Safe",
-        para: "Zen Drive Safe is a web and mobile application powered with AI and advanced analytics. The solution integrates seamlessly with vehicles and driver systems to provide:",
-      },
-    ],
-    paraListing: [
-      {
-        id: 1,
-        paraTitle: "Driver Fitness Tracking",
-        para: " – Monitors driver alertness, fatigue, and health.",
-      },
-      {
-        id: 2,
-        paraTitle: "Vehicle Fitness Tracking",
-        para: " – Ensures timely maintenance, inspections, and compliance.",
-      },
-      {
-        id: 3,
-        paraTitle: "Driving Behaviour Analysis",
-        para: " – – Uses dashcam and sensors to monitor over speeding, harsh braking, cornering, and distractions.",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description2: "The seven-day festival will take place across multiple iconic venues, including the Sawai Mansingh Stadium, Central Arena, and Zexpo Pavilion.  Visitors can expect to witness an exciting lineup of games — from cricket and football to badminton, cycling, and even traditional Indian sports that bring the city’s culture alive. Each day will conclude with live concerts, art showcases, and food festivals, ensuring that the event isn’t just about competition — it’s about community.",
 
-      }
-
-    ],
+    title2: 'A Week of Action and Celebration',
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
     img: newsImg,
   },
   {
     id: 6,
-    readTime: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    paraContent: [
-      {
-        id: 1,
-        paraTitle: "A Smarter Way to Drive Safe",
-        para: "ATRN Solutions LLP (“AETURN”), under the Startup India scheme and ZENIVERSE Ventures, has officially launched its groundbreaking Zen Drive Safe App — a next-generation road safety solution designed to reduce accidents and promote safer driving habits.",
-      },
-      {
-        id: 2,
-        paraTitle: "About Zen Drive Safe",
-        para: "Zen Drive Safe is a web and mobile application powered with AI and advanced analytics. The solution integrates seamlessly with vehicles and driver systems to provide:",
-      },
-    ],
-    paraListing: [
-      {
-        id: 1,
-        paraTitle: "Driver Fitness Tracking",
-        para: " – Monitors driver alertness, fatigue, and health.",
-      },
-      {
-        id: 2,
-        paraTitle: "Vehicle Fitness Tracking",
-        para: " – Ensures timely maintenance, inspections, and compliance.",
-      },
-      {
-        id: 3,
-        paraTitle: "Driving Behaviour Analysis",
-        para: " – – Uses dashcam and sensors to monitor over speeding, harsh braking, cornering, and distractions.",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description2: "The seven-day festival will take place across multiple iconic venues, including the Sawai Mansingh Stadium, Central Arena, and Zexpo Pavilion.  Visitors can expect to witness an exciting lineup of games — from cricket and football to badminton, cycling, and even traditional Indian sports that bring the city’s culture alive. Each day will conclude with live concerts, art showcases, and food festivals, ensuring that the event isn’t just about competition — it’s about community.",
 
-      }
-
-    ],
+    title2: 'A Week of Action and Celebration',
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
     img: newsImg,
   },
-];
 
-export const UpdatesNews = [
+
+];
+export const recentNews = [
   {
     id: 1,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news1,
-    duration: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
+    img: newsImg,
+
   },
   {
     id: 2,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news2,
-    duration: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
+    img: newsImg,
   },
   {
     id: 3,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news3,
-    duration: "12Min",
-    date: "12/01/2025",
+    publishTime: "Published on February 20, 2025",
+    postBy: "By Zexpo Team ",
     views: "2.5k",
+    title: "Jaipur Sports Exhibition 2025: The Pink City Gears Up for a Grand Celebration of Sports and Culture  ",
+    description2: "The seven-day festival will take place across multiple iconic venues, including the Sawai Mansingh Stadium, Central Arena, and Zexpo Pavilion.  Visitors can expect to witness an exciting lineup of games — from cricket and football to badminton, cycling, and even traditional Indian sports that bring the city’s culture alive. Each day will conclude with live concerts, art showcases, and food festivals, ensuring that the event isn’t just about competition — it’s about community.",
+
+    title2: 'A Week of Action and Celebration',
+    description: "The vibrant streets of Jaipur are set to echo with cheers, colors, and the sound of competition as the Jaipur Sports Events 2025 returns this March.  From thrilling tournaments to cultural showcases, the Pink City is ready to celebrate athleticism, teamwork, and tradition — all in one spectacular week. Organized by the Jaipur Sports Association in collaboration with Zexpo, this event is quickly becoming one of India’s most awaited multi-sport gatherings, drawing both professionals and passionate amateurs from across the country.",
     link: "/news/:id",
+    img: newsImg,
   },
-  {
-    id: 4,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news4,
-    duration: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    link: "/news/:id",
-  },
-]
+
+];
 
 export const businessDomains = [
   {
@@ -342,5 +161,52 @@ export const businessDomains = [
     description: "Platforms connecting travellers, local services, commerce, trade, taste and treatment.",
     image: tourism,
     link: "/industries/tourism"
+  },
+];
+
+export const exhibitionsData = [
+  {
+    id: 1,
+    title: "Delhi Expo Center",
+    location: "Lucknow City Center, Uttar Pradesh",
+    date: "12/11/2025 - 10/12/2025",
+    activeEvents: "12+ Active Events",
+    category: "Art & Craft Mela",
+    desc: "A perfect mix of tech & local Knowledge, vibrant energy, and live experiment.",
+    image: team1,
+    type: "Physical Exhibitions",
+  },
+  {
+    id: 2,
+    title: "Lucknow Expo Center",
+    location: "Lucknow City Center, Uttar Pradesh",
+    date: "12/11/2025 - 10/12/2025",
+    activeEvents: "12+ Active Events",
+    category: "Art & Craft Mela",
+    desc: "A perfect mix of tech & local Knowledge, vibrant energy, and live experiment.",
+    image: team2,
+    type: "Virtual Exhibitions",
+  },
+  {
+    id: 3,
+    title: "Banglore Expo Center",
+    location: "Banglore City Center, Uttar Pradesh",
+    date: "12/11/2025 - 10/12/2025",
+    activeEvents: "12+ Active Events",
+    category: "Art & Craft Mela",
+    desc: "A perfect mix of tech & local Knowledge, vibrant energy, and live experiment.",
+    image: team3,
+    type: "Physical Exhibitions",
+  },
+  {
+    id: 4,
+    title: "Lucknow Expo Center",
+    location: "Lucknow City Center, Uttar Pradesh",
+    date: "12/11/2025 - 10/12/2025",
+    activeEvents: "12+ Active Events",
+    category: "Art & Craft Mela",
+    desc: "A perfect mix of tech & local Knowledge, vibrant energy, and live experiment.",
+    image: team1,
+    type: "Virtual Exhibitions",
   },
 ];

@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
         Why Choose <span className="text-webprimary font-sourcePro">ZEXPO</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
         {features.map((feature) =>
           feature.type === "card" ? (
             <div

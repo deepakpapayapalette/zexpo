@@ -24,8 +24,8 @@ const Navbar = () => {
   const navLinksData = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Exhibition", href: "/services" },
-    { name: "News & Articles", href: "/articles" },
+    { name: "Exhibition", href: "/exhibition" },
+    { name: "News & Articles", href: "/news" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -110,13 +110,15 @@ const Navbar = () => {
 
             {/* Mobile CTA */}
             <div className="pt-6 flex flex-col gap-4">
-              <Link to="/contact">
-                <ThemeButton
-                  variant="fill"
-                  className="w-full py-2"
-                  onClick={closeMenu}
-                >
-                  Get In Touch
+              <Link to="/cart">
+                <button className="py-2 px-3 bg-gray-200 text-gray-800 rounded-md text-lg hover:bg-websecondary hover:text-white flex items-center gap-1">
+                  Cart <IoCartOutline size={20} />
+                </button>
+              </Link>
+
+              <Link to="/login">
+                <ThemeButton variant="fill" className="py-1">
+                  Login
                 </ThemeButton>
               </Link>
             </div>

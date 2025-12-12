@@ -2,40 +2,44 @@ import React from "react";
 import { Globe2, Power } from "lucide-react"; // lucide-react icons
 
 // Update with your image paths
-import MissionImg from "../../assets/images/about/about2.png";
+import MissionImg from "../../assets/images/about/mission.png";
 import VisionImg from "../../assets/images/about/about3.png";
 
 const MissionVisionSection = () => {
   return (
-    <section className="space-top bg-gradient-to-b from-transparent to-[#dbeefa]">
-      <div className="container md:pb-12 pb-8">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Mission Card */}
-          <div className="bg-white rounded-xl shadow-sm p-8 md:w-2/3 flex flex-col justify-center">
-            <div className="mb-4">
-              <div className="inline-flex p-3 bg-gray-200 rounded-full mb-2 ">
+    <section className="space-top ">
+      <div className="bg-webprimary text-white">
+        <div className="container md:py-12 py-8">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Mission Card */}
+            <div className=" ">
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-5xl font-semibold text-white mb-3">Our Mission</h3>
 
-                <Globe2 className="text-webprimary w-12 h-12 " />
+
+                <p className=" text-lg">
+                  Our mission is to bridge the gap between local experiences and global audiences, empowering organizers, vendors, and creators to shine on one shared stage — their city.
+                </p>
               </div>
-              <h3 className="text-3xl md:text-4xl font-semibold text-webprimary mb-3">Our Mission</h3>
-              <p className="text-gray-700 text-lg">
-                To democratize healthcare through innovative technology solutions, making quality medical care accessible to everyone, everywhere. We strive to bridge the gap between advanced healthcare and underserved communities.
+              <div>
+                <img
+                  src={MissionImg}
+                  alt="Mission"
+                  className="rounded-xl shadow-sm w-full object-cover max-h-[500px]"
+                />
+              </div>
+              <p className=" text-lg pt-8">
+                Every event is a story, every story is an experience, and every experience is worth sharing. It’s not just about attending an event; it’s about living the experience.
               </p>
             </div>
           </div>
-          {/* Mission image */}
-          <div className="md:w-1/3 flex items-center">
-            <img
-              src={MissionImg}
-              alt="Mission"
-              className="rounded-xl shadow-sm w-full object-cover max-h-full"
-            />
-          </div>
         </div>
+      </div>
 
+      <div className="container space-top">
         <div className="flex flex-col md:flex-row gap-8 mt-8">
           {/* Vision image */}
-          <div className="md:w-1/3 flex items-center order-2 md:order-1">
+          <div className="md:w-1/3 flex items-center ">
             <img
               src={VisionImg}
               alt="Vision"
@@ -43,14 +47,17 @@ const MissionVisionSection = () => {
             />
           </div>
           {/* Vision Card */}
-          <div className="bg-white rounded-xl shadow-sm p-8 md:w-2/3 flex flex-col justify-center order-1 md:order-2">
+          <div className="bg-white rounded-xl shadow-sm md:p-8 p-2 md:w-2/3 flex flex-col justify-center ">
             <div className="mb-4">
-              <div className="inline-flex p-3 bg-gray-200 rounded-full mb-2 ">
-                <Power className="text-webprimary w-12 h-12" />
-              </div>
-              <h3 className="text-3xl md:text-4xl font-semibold text-webprimary mb-3">Our Vision</h3>
-              <p className="text-gray-700 text-lg">
-                To create a world where healthcare knows no boundaries, where technology empowers both patients and providers, and where innovation drives positive social impact for generations to come.
+              <h3 className="text-2xl md:text-5xl font-semibold text-black mb-4 leading-tight">
+                OUR
+                <span className="text-webprimary font-sourcePro">VISION</span>
+              </h3>
+              <p className="text-para pb-4">
+                Our vision is simple — to make every city’s story visible to the world. To help communities showcase their culture, empower small businesses, and inspire people to step out, explore, and connect again.
+              </p>
+              <p className="text-para">
+                Whether you’re an event organizer seeking a platform, a local vendor looking for recognition, or someone simply searching for where to go next weekend — Zexpo is where your journey begins.
               </p>
             </div>
           </div>

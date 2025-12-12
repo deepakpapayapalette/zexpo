@@ -5,10 +5,14 @@ import HomePage from './pages/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NewsDetail from './pages/NewsDetail';
 import AboutUs from './pages/AboutUs';
-import OurServices from './pages/OurServices';
+import Exhibition from './pages/Exhibition';
 import ContactUs from './pages/ContactUs';
 import ATRN from './pages/ATRN';
 import AeturnEMR from './pages/AeturnEMR';
+import NewsArticles from './pages/NewsArticles';
+import PhysicalExhibitions from './pages/PhysicalExhibitions';
+import VirtualExhibitions from './pages/VirtualExhibitions';
+import PhysicalExhibitionsDetails from './pages/PhysicalExhibitionsDetails';
 
 
 
@@ -36,22 +40,38 @@ function App() {
         //   path: '/future-vision',
         //   element: <FutureVision />
         // },
-        // {
-        //   path: '/news',
-        //   element: <NewsArticles />
-        // },
+        {
+          path: '/news',
+          element: <NewsArticles />
+        },
         {
           path: '/news/:id',
           element: <NewsDetail />
         },
 
+        // {
+        //   path: '/aeturn',
+        //   element: <ATRN />
+        // },
         {
-          path: '/aeturn',
-          element: <ATRN />
+          path: '/exhibition',
+          element: <Exhibition />
         },
         {
-          path: '/services',
-          element: <OurServices />
+          path: '/exhibition/physical',
+          element: <PhysicalExhibitions />
+        },
+        {
+          path: '/exhibition/physical/:id',
+          element: <PhysicalExhibitionsDetails />
+        },
+        {
+          path: '/exhibition/virtual',
+          element: <VirtualExhibitions />
+        },
+        {
+          path: '/exhibition/virtual/:id',
+          element: <PhysicalExhibitionsDetails />
         },
         {
           path: '/about',

@@ -1,22 +1,16 @@
 import React from 'react'
-import team1 from "../../assets/images/home/team1.png";
-import team2 from "../../assets/images/home/team2.png";
-import team3 from "../../assets/images/home/team3.png";
+import team1 from "../../assets/images/about/team.png";
+import team2 from "../../assets/images/about/team.png";
+import team3 from "../../assets/images/about/team.png";
 const Carousel = React.lazy(() => import("react-multi-carousel"));
 import "react-multi-carousel/lib/styles.css";
 
 const teamData = [
   {
-    name: "Gaurav Pande",
-    role: "Founder",
-    desc: "Principal Promoter with over 25 years of experience in public health, innovation, technology, and medical tourism domains.",
-    image: team1
-  },
-  {
-    name: "Anil Sudan",
-    role: "Co-Founder",
-    desc: "Principal Promoter with over 30 years of experience in media, operations, leadership and strategy development.",
-    image: team2,
+    name: "Shalini Pande",
+    role: "CEO",
+    desc: "Principal Promoter with over 12 years od experience in operations managements and logistics support.",
+    image: team3,
   },
   {
     name: "Shalini Pande",
@@ -25,11 +19,12 @@ const teamData = [
     image: team3,
   },
   {
-    name: "Gaurav Pande",
-    role: "Founder",
-    desc: "Principal Promoter with over 25 years of experience in public health, innovation, technology, and medical tourism domains.",
-    image: team1
+    name: "Shalini Pande",
+    role: "CEO",
+    desc: "Principal Promoter with over 12 years od experience in operations managements and logistics support.",
+    image: team3,
   },
+
 
 
   // Add more member objects as needed
@@ -56,12 +51,10 @@ const LeadershipTeam = () => {
     <>
       <section className='container space-top'>
         <div>
-          <h3 className="text-3xl md:text-4xl font-semibold text-webprimary mb-2 leading-tight">
-            Leadership Team
+          <h3 className="text-3xl md:text-5xl font-semibold text-black mb-4 leading-tight">
+            Our <span className="text-webprimary font-sourcePro"> Team Member</span>
           </h3>
-          <p className="text-gray-700 text-base md:text-lg mb-8">
-            Meet the visionary leaders driving our mission forward.
-          </p>
+
         </div>
         {/* <div className='grid md:grid-cols-3 gap-6'> */}
         <Carousel
@@ -78,7 +71,7 @@ const LeadershipTeam = () => {
           partialVisible
         >
           {teamData.map((member, idx) => (
-            <div key={idx} className="bg-white rounded-xl border border-gray-200 shadow-sm py-4 px-4  flex flex-col items-center transition-all duration-300 h-full">
+            <div key={idx} className="bg-white rounded-xl border border-gray-200 shadow-sm py-4 px-4  flex flex-col  transition-all duration-300 h-full">
               <div className="w-full">
                 <img
                   src={member.image}
@@ -89,7 +82,7 @@ const LeadershipTeam = () => {
               <div>
                 <h4 className="text-webprimary font-semibold text-xl mb-1">{member.name}</h4>
                 <div className="text-black font-semibold mb-2">{member.role}</div>
-                <p className="text-gray-700 text-base ">{member.desc}</p>
+                {/* <p className="text-gray-700 text-base ">{member.desc}</p> */}
               </div>
             </div>
           ))}

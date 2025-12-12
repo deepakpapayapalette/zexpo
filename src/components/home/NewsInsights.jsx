@@ -39,7 +39,7 @@ const NewsInsights = () => {
     <section className="space-top ">
       <div className="container">
         <div className="mb-6">
-          <h3 className="text-4xl md:text-5xl font-semibold mb-2 leading-tight">
+          <h3 className="md:text-5xl text-3xl font-semibold mb-2 leading-tight">
             News & <span className="text-webprimary font-sourcePro">Articles</span>
           </h3>
         </div>

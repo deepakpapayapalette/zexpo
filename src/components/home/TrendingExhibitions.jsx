@@ -17,7 +17,7 @@ const TrendingExhibitions = () => {
       category: "Science & Tech Mela",
       description:
         "A perfect mix of technology & local Student Knowledge, vibrant energy, and live experiment.",
-      link: "/exhibitions/lucknow",
+      link: "/exhibition/physical/1",
     },
     {
       id: 2,
@@ -29,14 +29,14 @@ const TrendingExhibitions = () => {
       category: "Arts & Craft Mela",
       description:
         "A perfect example of local people traditionally Craft, vibrant energy, and Arts & Craft Products.",
-      link: "/exhibitions/delhi",
+      link: "/exhibition/physical/2",
     },
   ];
 
   return (
     <section className="space-top container mb-12">
       <div className="">
-        <h2 className="text-5xl mb-8 font-semibold text-black">
+        <h2 className="md:text-5xl text-3xl mb-8 font-semibold text-black">
           Our Trending <span className="text-webprimary font-sourcePro">Exhibitions</span>
         </h2>
 
