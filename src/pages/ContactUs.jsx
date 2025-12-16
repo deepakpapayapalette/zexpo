@@ -16,7 +16,8 @@ const ContactUs = () => {
   }, []);
 
   const bannerContent = {
-    title: "Contact Us",
+    title: "Contact ",
+    title2: 'Us',
     description: "Get in touch with us to learn, collaborate, or partner."
   }
 

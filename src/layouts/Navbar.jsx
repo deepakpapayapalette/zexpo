@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 import Logo from "../assets/images/logo.png";
 import ThemeButton from "../components/UI/ThemeButton";
@@ -11,6 +12,7 @@ import "../assets/styles/website/navbar.css";
 
 const Navbar = () => {
   const location = useLocation();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -65,8 +67,13 @@ const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link to="/cart">
-              <button className="py-2 px-3 bg-gray-200 text-gray-800 rounded-md text-lg hover:bg-websecondary hover:text-white flex items-center gap-1">
+              <button className="py-2 px-3 bg-gray-200 text-gray-800 rounded-md text-lg hover:bg-websecondary hover:text-white flex items-center gap-1 relative">
                 Cart <IoCartOutline size={20} />
+                {totalQuantity > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                    {totalQuantity}
+                  </span>
+                )}
               </button>
             </Link>
 
@@ -111,8 +118,13 @@ const Navbar = () => {
             {/* Mobile CTA */}
             <div className="pt-6 flex flex-col gap-4">
               <Link to="/cart">
-                <button className="py-2 px-3 bg-gray-200 text-gray-800 rounded-md text-lg hover:bg-websecondary hover:text-white flex items-center gap-1">
+                <button className="py-2 px-3 bg-gray-200 text-gray-800 rounded-md text-lg hover:bg-websecondary hover:text-white flex items-center gap-1 w-full justify-center relative">
                   Cart <IoCartOutline size={20} />
+                  {totalQuantity > 0 && (
+                    <span className="absolute top-0 right-1/3 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {totalQuantity}
+                    </span>
+                  )}
                 </button>
               </Link>
 

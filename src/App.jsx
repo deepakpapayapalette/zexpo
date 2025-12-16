@@ -13,6 +13,11 @@ import NewsArticles from './pages/NewsArticles';
 import PhysicalExhibitions from './pages/PhysicalExhibitions';
 import VirtualExhibitions from './pages/VirtualExhibitions';
 import PhysicalExhibitionsDetails from './pages/PhysicalExhibitionsDetails';
+import BoothsDetails from './pages/BoothsDetails';
+import ProductDetails from './pages/ProductDetails';
+import Login from './pages/Login';
+import Cart from './pages/Cart';
+import ProductsList from './pages/ProductsList';
 
 
 
@@ -26,6 +31,14 @@ function App() {
         {
           path: '/',
           element: <HomePage />
+        },
+        {
+          path: '/login',
+          element: <Login />
+        },
+        {
+          path: '/cart',
+          element: <Cart />
         },
 
         // {
@@ -45,9 +58,14 @@ function App() {
           element: <NewsArticles />
         },
         {
+          path: '/products',
+          element: <ProductsList />
+        },
+        {
           path: '/news/:id',
           element: <NewsDetail />
         },
+
 
         // {
         //   path: '/aeturn',
@@ -65,6 +83,15 @@ function App() {
           path: '/exhibition/physical/:id',
           element: <PhysicalExhibitionsDetails />
         },
+        {
+          path: '/exhibition/physical/:id/booths/:id',
+          element: <BoothsDetails />
+        },
+        {
+          path: '/product/:id',
+          element: <ProductDetails />
+        },
+
         {
           path: '/exhibition/virtual',
           element: <VirtualExhibitions />

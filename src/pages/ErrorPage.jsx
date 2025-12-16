@@ -4,17 +4,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 const ErrorPage = () => {
   const navigate = useNavigate();
 
-  const backFun = () => navigate(-1);
-  useEffect(() => {
-    const setTimeoutFn = setTimeout(() => {
-      // call backFun after 5 seconds
-      backFun();
-    }, 5000);
+  // const backFun = () => navigate(-1);
+  // useEffect(() => {
+  //   const setTimeoutFn = setTimeout(() => {
+  //     backFun();
+  //   }, 5000);
 
-    return (() => {
-      clearTimeout(setTimeoutFn);
-    })
-  })
+  //   return (() => {
+  //     clearTimeout(setTimeoutFn);
+  //   })
+  // })
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
@@ -26,12 +25,12 @@ const ErrorPage = () => {
         <NavLink to="/" className="text-webprimary opacity-90 transition-opacity duration-200 delay-100 ease-in-out hover:opacity-100 underline">
           Back to Home
         </NavLink>
-        <button
+        {/* <button
           className="btn mt-4 bg-webprimary opacity-80 text-white px-4 py-2 rounded transition-opacity duration-200 delay-100 ease-in-out hover:opacity-100"
           onClick={backFun}
         >
           Go Back
-        </button>
+        </button> */}
       </div>
     </div>
   );

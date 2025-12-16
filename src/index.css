@@ -2,105 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-}
-
-p {
-  font-family: "Lato", sans-serif;
-}
-
-html,
-body {
-  scroll-behavior: smooth;
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* font-family: "Montserrat", sans-serif; */
-  font-family: "Source Serif Pro", sans-serif;
-  font-weight: 500;
-}
-
-
 @layer base {
-
   :root {
     --background: #F9F9F9;
     --foreground: #000000;
     --para: #646464;
     --web-card: #FFFFFF;
     --web-card-foreground: #000000b3;
-
     --web-popover: #ffffff;
     --web-popover-foreground: #020817;
-
     --web-primary: #085BC5;
     --web-primary-foreground: #FFFFFF;
-
     --web-secondary: #082ec5;
     --websecondary-foreground: #0F172A;
-
     --web-muted: #BDC4D44D;
     --web-muted-foreground: #64748B;
-
     --web-accent: #F1F5F9;
     --webaccent-foreground: #0F172A;
-
     --web-success: #10792C;
     --web-success-foreground: #F8FAFC;
-
     --web-destructive: #F80E0E;
     --web-destructive-foreground: #F8FAFC;
-
-    --web-border: #286578;
+    --web-border: #11a7f8;
     --web-input: #E2E8F0;
     --web-ring: #020817;
     --text-para: #595a5a;
     --light-theme: #f5fafc;
-
     --web-radius: 0.5rem;
-
     --sidebar-background: #0077B5;
-
     --sidebar-foreground: #4c91acaf;
-
     --sidebar-primary: #ffffff1a;
-
     --sidebar-primary-foreground: #FAFAFA;
-
     --sidebar-accent: #F4F4F5;
-
     --sidebar-accent-foreground: #18181B;
-
     --sidebar-border: #E5E7EB;
-
     --sidebar-ring: #3B82F6;
   }
 
-
-}
-
-@layer base {
   * {
     @apply border-[var(--web-border)];
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
   }
 
   body {
     @apply bg-[var(--background)] text-[var(--foreground)];
+    scroll-behavior: smooth;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Source Serif Pro", sans-serif;
+    font-weight: 500;
+  }
 }
 
-
+/* Layout Utilities */
 .space-top {
   margin-top: 80px;
 }
@@ -129,71 +92,20 @@ h6 {
   }
 }
 
-.custom-input .MuiOutlinedInput-root fieldset {
-  border-color: var(--web-primary);
-}
-
-.custom-input .MuiOutlinedInput-root:hover fieldset {
-  border-color: var(--web-primary);
-}
-
-.custom-input .MuiOutlinedInput-root.Mui-focused fieldset {
-  border-color: var(--web-primary);
-}
-
-/* sweetalert2 custom buttons fix */
-.swal2-confirm-custom {
-  background-color: var(--web-primary) !important;
-  color: #fff !important;
-}
-
-.swal2-cancel-custom {
-  background-color: var(--web-muted-foreground) !important;
-  color: #fff !important;
-}
-
-
-
-
-.hide-scrollbar {
-  overflow-y: auto;
-  /* enable scroll */
-  -ms-overflow-style: none !important;
-  /* IE & Edge */
-  scrollbar-width: none !important;
-  /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none !important;
-  /* Chrome, Safari */
-}
-
-.filter-sidebar {
-  position: fixed;
-  right: 0;
-  z-index: 9;
-  top: 70px;
-}
-
-.health-table-header-style {
-  background-color: var(--web-primary) !important;
-  padding: 4px 8px;
-  color: white;
-  font-weight: 500;
-  text-align: center;
-}
-
-@media screen and (max-width: 576px) {
-  .filter-sidebar {
-    position: fixed;
-    right: -12px;
-    z-index: 9;
-    top: 48px;
+/* Typography Overrides */
+@media screen and (min-width:768px) {
+  p {
+    font-size: 18px;
   }
-
 }
 
+@media screen and (max-width:768px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Components */
 .theme-btn {
   border: 2px solid var(--web-primary);
   border-radius: 100px;
@@ -211,25 +123,6 @@ h6 {
   color: #fff;
   border-color: var(--web-primary);
 }
-
-/* .theme-btn-fill {
-  font-size: 18px;
-  background: var(--web-primary);
-  color: #fff;
-  border: 2px solid var(--web-primary);
-  border-radius: 100px;
-  padding: 10px 2rem;
-  font-weight: 500;
-  color: var(--web-card);
-  transition: background 0.2s, color 0.2s;
-  cursor: pointer;
-}
-
-.theme-btn-fill:hover {
-  background: transparent;
-  color: var(--web-primary);
-  border-color: var(--web-primary);
-} */
 
 .theme-btn-fill {
   cursor: pointer;
@@ -263,10 +156,58 @@ h6 {
   left: 0;
 }
 
-/* .theme-btn-fill:hover {
-  color: white;
-} */
+/* MUI Overrides */
+.custom-input .MuiOutlinedInput-root fieldset,
+.custom-input .MuiOutlinedInput-root:hover fieldset,
+.custom-input .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: var(--web-primary);
+}
 
+/* SweetAlert2 Overrides */
+.swal2-confirm-custom {
+  background-color: var(--web-primary) !important;
+  color: #fff !important;
+}
+
+.swal2-cancel-custom {
+  background-color: var(--web-muted-foreground) !important;
+  color: #fff !important;
+}
+
+/* Utilities */
+.hide-scrollbar {
+  overflow-y: auto;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+.filter-sidebar {
+  position: fixed;
+  right: 0;
+  z-index: 9;
+  top: 70px;
+}
+
+@media screen and (max-width: 576px) {
+  .filter-sidebar {
+    right: -12px;
+    top: 48px;
+  }
+}
+
+.health-table-header-style {
+  background-color: var(--web-primary) !important;
+  padding: 4px 8px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Carousel Overrides */
 .container .react-multi-carousel-dot--active button {
   background-color: var(--web-primary) !important;
   border-color: var(--web-primary) !important;
@@ -285,18 +226,4 @@ h6 {
 
 .react-multi-carousel-track {
   top: -8px;
-}
-
-
-
-@media screen and (min-width:768px) {
-  p {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width:768px) {
-  p {
-    font-size: 16px;
-  }
 }

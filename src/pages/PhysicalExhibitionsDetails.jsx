@@ -8,7 +8,14 @@ import boot1 from '../assets/images/services/boot1.png'
 import boot2 from '../assets/images/services/boot2.png'
 import boot3 from '../assets/images/services/boot3.png'
 import boot4 from '../assets/images/services/boot4.png'
+import exImage1 from '../assets/images/services/ex-img1.png'
+import exImage2 from '../assets/images/services/ex-img2.png'
+import exImage3 from '../assets/images/services/ex-img3.png'
+import exImage4 from '../assets/images/services/ex-img4.png'
+import { Link } from 'react-router-dom';
+import ThemeButton from '../components/UI/ThemeButton';
 
+const imgArr = [exImage1, exImage2, exImage3, exImage4]
 
 
 const PhysicalExhibitionsDetails = () => {
@@ -32,11 +39,11 @@ const PhysicalExhibitionsDetails = () => {
   ];
 
   const booths = [
-    { id: "Booth #A-102", number: "01", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Available", image: boot1 },
-    { id: "Booth #A-102", number: "02", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Available", image: boot2 },
-    { id: "Booth #A-102", number: "03", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Booked", image: boot3 },
-    { id: "Booth #A-102", number: "04", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Booked", image: boot4 },
-    { id: "Booth #A-102", number: "05", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Available", image: boot4 }
+    { _id: 1, id: "Booth #A-102", number: "01", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Available", image: boot1 },
+    { _id: 2, id: "Booth #A-103", number: "02", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Available", image: boot2 },
+    { _id: 3, id: "Booth #A-104", number: "03", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Booked", image: boot3 },
+    { _id: 4, id: "Booth #A-105", number: "04", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Booked", image: boot4 },
+    { _id: 5, id: "Booth #A-106", number: "05", size: "3*3 (9 sq.m)", price: "₹15,000/days", status: "Available", image: boot4 }
   ];
 
   return (
@@ -147,16 +154,36 @@ const PhysicalExhibitionsDetails = () => {
                   <p className="text-[#0b5ed7] font-bold text-lg mb-4">{booth.price}</p>
 
                   <div className="flex gap-4">
-                    <button className="flex-1 bg-[#0b5ed7] text-white font-bold py-2 rounded hover:bg-blue-700 transition-colors">
-                      Book Booth
-                    </button>
-                    <button className="flex-1 border border-[#0b5ed7] text-[#0b5ed7] font-bold py-2 rounded hover:bg-blue-50 transition-colors">
-                      View Details
-                    </button>
+                    <Link to={`booths/${booth._id}`}>
+                      <ThemeButton variant='fill' className='w-full'>
+                        Book Booth
+                      </ThemeButton>
+                    </Link>
+                    <Link to={`booths/${booth._id}`}>
+                      <ThemeButton className='w-full'>
+                        View Details
+                      </ThemeButton>
+                    </Link>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className='mt-10 container'>
+          <h2 className="text-2xl md:text-5xl font-semibold font-serif mb-8 text-black">
+            Our Trending <span className="text-[#0b5ed7] font-sourcePro"> Exhibitions</span>
+          </h2>
+
+          <div className='grid md:grid-cols-2 gap-4 '>
+            {
+              imgArr.map((img, idx) => (
+                <div key={idx} className=''>
+                  <img src={img} alt="" className='w-full h-auto object-cover' />
+                </div>
+              ))
+            }
           </div>
         </div>
         <TrendingExhibitions />

@@ -8,7 +8,43 @@ import newsImg from '../assets/images/news/new1.png'
 import team1 from "../assets/images/home/team1.png"; // Placeholder
 import team2 from "../assets/images/home/team2.png"; // Placeholder
 import team3 from "../assets/images/home/team1.png"; // Placeholder
+import productImage from '../assets/images/product/product1.png'
+import productImg from '../assets/images/product/product1.png'
 
+export const productCards = [
+  {
+    id: 1,
+    image: productImage,
+    title: "Smart VR",
+    company: "ATRN Solutions LLP",
+    boothNumber: "102",
+    price: "₹1000/Pics"
+  },
+  {
+    id: 2,
+    image: productImage,
+    title: "Smart VR",
+    company: "ATRN Solutions LLP",
+    boothNumber: "102",
+    price: "₹2,000/Pics"
+  },
+  {
+    id: 3,
+    image: productImage,
+    title: "Smart VR",
+    company: "ATRN Solutions LLP",
+    boothNumber: "102",
+    price: "₹4,000/Pics"
+  },
+  {
+    id: 4,
+    image: productImage,
+    title: "Smart VR",
+    company: "ATRN Solutions LLP",
+    boothNumber: "102",
+    price: "₹15,000/Pics"
+  }
+];
 
 export const newsData = [
   {

@@ -4,6 +4,7 @@ import { newsData, recentNews } from '../data/LocalData'
 import ScrollTopAtuo from '../components/common/ScrollTopAtuo'
 import newDetailImg from "../assets/images/news/news-detail.png"
 import { IoIosArrowRoundForward } from "react-icons/io";
+import NewsCard from '../components/UI/NewsCard'
 
 const NewsDetail = () => {
   const { id } = useParams();
@@ -63,26 +64,7 @@ const NewsDetail = () => {
           <h2 className='text-xl md:text-2xl mb-6 font-semibold border-b pb-2'>You May Also Like This</h2>
           <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-6'>
             {recentNews.map((item) => (
-              <div key={item.id} className="group flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={item.img || newDetailImg}
-                    alt={item.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold mb-2 line-clamp-2 leading-tight group-hover:text-webprimary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3 text-sm flex-grow">
-                    {item.description}
-                  </p>
-                  <Link to={`/news/${item.id}`} className="inline-flex items-center gap-1 text-webprimary font-bold hover:gap-2 transition-all mt-auto self-start">
-                    Read More <IoIosArrowRoundForward className="text-2xl" />
-                  </Link>
-                </div>
-              </div>
+              <NewsCard key={item.id} item={item} />
             ))}
           </div>
         </div>

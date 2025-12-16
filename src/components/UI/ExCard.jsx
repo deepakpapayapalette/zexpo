@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 const ExCard = ({ item = [] }) => {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300">
+    <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow duration-300 p-4">
       {/* Image Section */}
       <div className="relative h-56 w-full">
         <img
@@ -21,8 +21,7 @@ const ExCard = ({ item = [] }) => {
         {/* Type Tag */}
         <div className="absolute top-4 left-4">
           <span
-            className={`px-3 py-1 rounded text-sm font-medium text-white ${item.type === "Physical Exhibitions"
-              ? "bg-[#5992b9]/90"
+            className={`px-3 py-1 rounded text-sm font-medium text-white animate-pulse ${item.type === "Physical Exhibitions" ? "bg-[#5992b9]/90"
               : "bg-gray-500/90"
               }`}
           >
@@ -38,7 +37,7 @@ const ExCard = ({ item = [] }) => {
       </div>
 
       {/* Content Section */}
-      <div className="p-5 flex-grow flex flex-col">
+      <div className="pt-4 flex-grow flex flex-col">
         <h4 className="text-xl font-bold text-black mb-3">
           {item.title}
         </h4>
@@ -66,11 +65,18 @@ const ExCard = ({ item = [] }) => {
           {item.desc}
         </p>
 
-        <Link to={`${item.id}`} className="mt-auto">
+        <Link
+          to={`${item.type === "Virtual Exhibitions"
+            ? "/exhibition/virtual"
+            : "/exhibition/physical"
+            }/${item.id}`}
+          className="mt-auto"
+        >
           <ThemeButton variant="fill" className="w-full rounded-lg py-3">
             Explore Exhibitions
           </ThemeButton>
         </Link>
+
       </div>
     </div>
   )
