@@ -18,6 +18,7 @@ import ProductDetails from './pages/ProductDetails';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import ProductsList from './pages/ProductsList';
+import UserProfile from './components/user/UserProfile';
 
 
 
@@ -39,6 +40,10 @@ function App() {
         {
           path: '/cart',
           element: <Cart />
+        },
+        {
+          path: '/user-profile',
+          element: <UserProfile />
         },
 
         // {

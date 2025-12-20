@@ -17,3 +17,5 @@ store.subscribe(() => {
     console.warn("Could not save cart state", e);
   }
 });
+
+console.log(store);

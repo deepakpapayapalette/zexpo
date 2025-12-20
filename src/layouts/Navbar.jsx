@@ -4,24 +4,19 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
-
 import Logo from "../assets/images/logo.png";
 import ThemeButton from "../components/UI/ThemeButton";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import "../assets/styles/website/navbar.css";
 
 const Navbar = () => {
   const location = useLocation();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
-
-  const toggleDropdown = (key) =>
-    setActiveDropdown((prev) => (prev === key ? null : key));
+  const toggleDropdown = (key) => setActiveDropdown((prev) => (prev === key ? null : key));
 
   const navLinksData = [
     { name: "Home", href: "/" },
@@ -40,6 +35,15 @@ const Navbar = () => {
 
   const linkClass = ({ isActive }) =>
     `${baseLinkClasses} ${isActive ? activeClasses : inactiveClasses}`;
+
+  const {
+    isLoading,
+    isAuthenticated,
+    error,
+    loginWithRedirect: login,
+    logout: auth0Logout,
+    user,
+  } = useAuth0();
 
   return (
     <nav className="sticky top-0 bg-white shadow-sm border-b border-gray-200 z-[1001] flex items-center">
@@ -77,7 +81,7 @@ const Navbar = () => {
               </button>
             </Link>
 
-            <Link to="/login">
+            <Link to={`${isAuthenticated ? "/user-profile" : "/login"}`}>
               <ThemeButton variant="fill" className="py-1">
                 Login
               </ThemeButton>

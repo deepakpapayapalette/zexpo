@@ -23,8 +23,8 @@ const Exhibition = () => {
       <Exhibitions />
       <TrendingExhibitions />
       <ExhibitionsNearYou />
-      {/* <OurFocusArea />
-      <OurProcess />
+      {/*<OurFocusArea />
+     <OurProcess />
       <IndustriesWeServe />
       <HealthcareCTA /> */}
     </>
