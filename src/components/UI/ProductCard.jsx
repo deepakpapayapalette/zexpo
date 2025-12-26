@@ -1,16 +1,29 @@
 import React from 'react';
-import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ThemeButton from './ThemeButton';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
+import { toggleWish } from '../../store/wishSlice';
 
 const ProductCard = ({ item = [] }) => {
   const dispatch = useDispatch();
 
+  // Check if item is in wishlist
+  const isInWishlist = useSelector((state) =>
+    state.wish.items.some((wishItem) => wishItem.id === item.id)
+  );
+
   const addItemToCart = (e) => {
     e.preventDefault(); // Prevent navigation if wrapped in a link
     dispatch(addToCart(item));
+    console.log('Added to cart:', item.title);
+  };
+
+  const addItemToWish = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(toggleWish(item));
   };
 
   return (
@@ -21,8 +34,16 @@ const ProductCard = ({ item = [] }) => {
           alt={item?.productName}
           className="w-full h-full object-cover mix-blend-multiply"
         />
-        <button className="absolute top-3 right-3 p-2 bg-white/50 hover:bg-white rounded-full transition-colors text-gray-700 hover:text-red-500">
-          <FaHeart />
+        <button
+          className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-200 transform hover:scale-110 ${
+            isInWishlist
+              ? 'bg-red-500 text-white hover:bg-red-600'
+              : 'bg-white/80 hover:bg-white text-gray-700 hover:text-red-500'
+          }`}
+          onClick={addItemToWish}
+          title={isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+        >
+          {isInWishlist ? <FaHeart /> : <FaRegHeart />}
         </button>
       </div>
 

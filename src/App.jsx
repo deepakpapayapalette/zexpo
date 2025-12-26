@@ -7,7 +7,7 @@ import NewsDetail from './pages/NewsDetail';
 import AboutUs from './pages/AboutUs';
 import Exhibition from './pages/Exhibition';
 import ContactUs from './pages/ContactUs';
-import ATRN from './pages/ATRN';
+
 import AeturnEMR from './pages/AeturnEMR';
 import NewsArticles from './pages/NewsArticles';
 import PhysicalExhibitions from './pages/PhysicalExhibitions';
@@ -19,6 +19,12 @@ import Login from './pages/Login';
 import Cart from './pages/Cart';
 import ProductsList from './pages/ProductsList';
 import UserProfile from './components/user/UserProfile';
+
+import BookingsOrders from './pages/user/BookingsOrders';
+import WishListPage from './pages/user/WishListPage';
+import Notifications from './components/user/Notifications';
+import SavedAddress from './components/user/SavedAddress';
+import AccountSettings from './components/user/AccountSettings';
 
 
 
@@ -40,6 +46,10 @@ function App() {
         {
           path: '/cart',
           element: <Cart />
+        },
+        {
+          path: '/wishlist',
+          element: <WishListPage />
         },
         {
           path: '/user-profile',
@@ -93,6 +103,10 @@ function App() {
           element: <BoothsDetails />
         },
         {
+          path: '/exhibition/virtual/:id/booths/:id',
+          element: <BoothsDetails />
+        },
+        {
           path: '/product/:id',
           element: <ProductDetails />
         },
@@ -112,6 +126,22 @@ function App() {
         {
           path: '/contact',
           element: <ContactUs />
+        },
+        {
+          path: '/bookings',
+          element: <BookingsOrders />
+        },
+        {
+          path: '/notifications',
+          element: <Notifications />
+        },
+        {
+          path: '/address',
+          element: <SavedAddress />
+        },
+        {
+          path: '/settings',
+          element: <AccountSettings />
         },
 
         // {

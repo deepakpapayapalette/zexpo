@@ -30,6 +30,7 @@ import {
 
 const UserProfile = () => {
   const { user, logout: auth0Logout, isLoading } = useAuth0();
+  const currentUser = getUserFromStorage();
 
   // State for profile form
   const [formData, setFormData] = useState({
@@ -53,7 +54,7 @@ const UserProfile = () => {
         dateOfBirth: storedUser.dateOfBirth || '',
         gender: storedUser.gender || ''
       });
-      console.log('Loaded user data from localStorage:', storedUser);
+
     }
   }, []); // Run once on mount
 
@@ -148,11 +149,11 @@ const UserProfile = () => {
   // Menu items for sidebar
   const menuItems = [
     { id: 'cart', icon: ShoppingCart, label: 'Cart', path: '/cart' },
-    { id: 'wishlist', icon: Heart, label: 'Wishlist / Saved Exhibitions' },
-    { id: 'bookings', icon: ClipboardList, label: 'Booking/Order' },
-    { id: 'notifications', icon: Bell, label: 'Notifications' },
-    { id: 'address', icon: MapPin, label: 'Saved Address' },
-    { id: 'settings', icon: Settings, label: 'Account Setting' },
+    { id: 'wishlist', icon: Heart, label: 'Wishlist / Saved Exhibitions', path: '/wishlist' },
+    { id: 'bookings', icon: ClipboardList, label: 'Booking/Order', path: '/bookings' },
+    { id: 'notifications', icon: Bell, label: 'Notifications', path: '/notifications' },
+    { id: 'address', icon: MapPin, label: 'Saved Address', path: '/address' },
+    { id: 'settings', icon: Settings, label: 'Account Setting', path: '/settings' },
   ];
 
   return (
@@ -173,15 +174,19 @@ const UserProfile = () => {
                 <div className="flex flex-col items-center text-center">
                   {/* Avatar with Ring */}
                   <div className="relative mb-4">
-                    {user?.picture ? (
+                    {user?.picture || currentUser?.picture ? (
                       <img
-                        src={user.picture}
-                        alt={user.name || 'User'}
+                        src={user?.picture || currentUser?.picture}
+                        alt={user?.name || currentUser?.name || "User"}
                         className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80";
+                        }}
                       />
                     ) : (
                       <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-webprimary text-3xl font-bold shadow-lg border-4 border-blue-100">
-                        {user?.name?.charAt(0) || user?.email?.charAt(0) || 'U'}
+                        {user?.name?.charAt(0) || currentUser?.name?.charAt(0) || user?.email?.charAt(0) || currentUser?.email?.charAt(0) || "U"}
                       </div>
                     )}
                     {user?.email_verified && (
@@ -264,15 +269,19 @@ const UserProfile = () => {
               <form onSubmit={handleSaveProfile} className="space-y-6">
                 {/* Avatar Upload Section */}
                 <div className="flex items-center gap-4 pb-6 border-b border-gray-200">
-                  {user?.picture ? (
+                  {user?.picture || currentUser?.picture ? (
                     <img
-                      src={user.picture}
-                      alt={user.name || 'User'}
+                      src={user?.picture || currentUser?.picture}
+                      alt={user?.name || currentUser?.name || "User"}
                       className="w-20 h-20 rounded-full object-cover"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80";
+                      }}
                     />
                   ) : (
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-webprimary to-websecondary flex items-center justify-center text-white text-2xl font-bold">
-                      {user?.name?.charAt(0) || user?.email?.charAt(0) || 'U'}
+                      {user?.name?.charAt(0) || currentUser?.name?.charAt(0) || user?.email?.charAt(0) || currentUser?.email?.charAt(0) || "U"}
                     </div>
                   )}
                   <div className="flex gap-3">

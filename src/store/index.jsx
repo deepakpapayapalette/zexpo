@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
 import productReducer from "./productSlice";
-
+import wishReducer from "./wishSlice";
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
     product: productReducer,
+    wish:wishReducer
   },
 })
 
@@ -18,4 +19,4 @@ store.subscribe(() => {
   }
 });
 
-console.log(store);
+

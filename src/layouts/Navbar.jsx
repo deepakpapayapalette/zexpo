@@ -9,7 +9,11 @@ import ThemeButton from "../components/UI/ThemeButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../assets/styles/website/navbar.css";
 
+import { getUserFromStorage } from '../utils/userStorage';
+
 const Navbar = () => {
+  const currentUser = getUserFromStorage();
+
   const location = useLocation();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,9 +86,34 @@ const Navbar = () => {
             </Link>
 
             <Link to={`${isAuthenticated ? "/user-profile" : "/login"}`}>
-              <ThemeButton variant="fill" className="py-1">
-                Login
-              </ThemeButton>
+              {!isAuthenticated && (
+                <ThemeButton variant="fill" className="py-1">
+                  Login
+                </ThemeButton>
+              )}
+              {isAuthenticated && (
+                <div className="py-1 text-webprimary">
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={
+                        user?.picture ||
+                        currentUser?.picture ||
+                        "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80"
+                      }
+                      alt="User"
+                      className="w-9 h-9 rounded-full object-cover border border-gray-200"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80"
+                      }}
+                    />
+                    <span className="font-medium">
+                      {user?.name || currentUser?.name || "User"}
+                    </span>
+                  </div>
+                </div>
+              )}
             </Link>
           </div>
 
